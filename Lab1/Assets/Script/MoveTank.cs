@@ -5,10 +5,12 @@ public class MoveTank : MonoBehaviour
     public int speedMove = 10;
     public int turnSpeedMove = 100;
 
+    void Start()
+    {
+        
+    }
     void Update()
     {
-        //оброка циклічна і якщо лишити  все if то їзда вперед і повороти будуть комбінуватись
-        //так більш правдободіншіше на танк
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * speedMove * Time.deltaTime);

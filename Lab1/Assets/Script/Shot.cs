@@ -5,6 +5,11 @@ public class Shot : MonoBehaviour
     public GameObject gun_point;
     public GameObject bomb;
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     { 
         if (Input.GetButtonDown("Jump"))

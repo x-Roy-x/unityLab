@@ -1,16 +1,27 @@
-﻿
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
     public GameObject bomb;
-    public int shotSpeedMove = 100;
+    public int shotSpeedMove = 150;
 
-    void Update()
+    void Start()
+    {
+        
+    }
+
+    void Update() 
     {
         transform.Translate(Vector3.forward * shotSpeedMove * Time.deltaTime);
-        if(transform.position.y < 0.1)
+        if(transform.position.y < 1) 
         {
+            Destroy(bomb);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision) 
+    {
+        if(collision.gameObject.tag == "Destroyable") {
             Destroy(bomb);
         }
     }
