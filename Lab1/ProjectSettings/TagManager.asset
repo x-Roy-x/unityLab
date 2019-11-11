@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Destroyable
+  - DestrojableBomb
+  - DestrojBomb
   - Bullet
-  - UnDestroyable
+  - DestrojWall
   layers:
   - Default
   - TransparentFX

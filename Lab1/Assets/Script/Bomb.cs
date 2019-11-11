@@ -3,26 +3,25 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public GameObject bomb;
+    public GameObject gunPoint;
     public int shotSpeedMove = 150;
+    public Rigidbody rigidbody;
 
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = gunPoint.transform.rotation * Vector3.forward * shotSpeedMove ;
     }
-
-    void Update() 
+    
+    void Update()
     {
-        transform.Translate(Vector3.forward * shotSpeedMove * Time.deltaTime);
-        if(transform.position.y < 1) 
-        {
-            Destroy(bomb);
-        }
+
     }
 
     private void OnCollisionEnter(Collision collision) 
     {
-        if(collision.gameObject.tag == "Destroyable") {
-            Destroy(bomb);
+        if(collision.gameObject.tag == "DestrojBomb") {
+           Destroy(bomb);
         }
     }
 }

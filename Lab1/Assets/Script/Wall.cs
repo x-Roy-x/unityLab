@@ -6,9 +6,8 @@ public class Wall: MonoBehaviour
 
     void Start()
     {
-        Renderer rend = GetComponent<Renderer>();
         wall = gameObject;
-
+        Renderer rend = GetComponent<Renderer>();
         rend.material.color = Color.gray;
     }
 
@@ -19,10 +18,9 @@ public class Wall: MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Bullet")
+        if(collision.gameObject.tag == "DestrojWall")
         {
             Destroy(wall);
         }
-        
     }
 }

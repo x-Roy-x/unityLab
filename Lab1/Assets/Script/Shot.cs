@@ -2,19 +2,21 @@
 
 public class Shot : MonoBehaviour
 {
-    public GameObject gun_point;
+    public GameObject gunPoint;
     public GameObject bomb;
 
     void Start()
     {
-        
+
     }
 
     void Update()
-    { 
+    {
         if (Input.GetButtonDown("Jump"))
         {
-            Transform.Instantiate(bomb, gun_point.transform.position, transform.rotation);
+            var createdBomb = Instantiate(bomb, gunPoint.transform.position, gunPoint.transform.rotation);
+            var bombComponent = createdBomb.GetComponent<Bomb>();
+            bombComponent.gunPoint = gunPoint;    
         }
     }
 }

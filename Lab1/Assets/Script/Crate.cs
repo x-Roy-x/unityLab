@@ -3,6 +3,7 @@
 public class Crate : MonoBehaviour
 {
     Renderer rend;
+
     readonly Color[] colors = { 
         Color.red, Color.blue, Color.green, Color.cyan, 
         Color.grey, Color.magenta, Color.yellow
